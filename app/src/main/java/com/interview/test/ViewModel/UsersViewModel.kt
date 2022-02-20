@@ -7,10 +7,10 @@ import com.interview.test.Repository.UsersRepository
 import kotlinx.coroutines.Dispatchers
 
 class UsersViewModel(private val usersRepository: UsersRepository):ViewModel() {
-    fun getitems() = liveData(Dispatchers.IO) {
+    fun getitems(page:Int) = liveData(Dispatchers.IO) {
         emit(Resources.loading(data = null))
         try {
-            emit(Resources.success(data = usersRepository.getapi()))
+            emit(Resources.success(data = usersRepository.getapi(page)))
             System.out.println("got result")
         } catch (exception: Exception) {
             emit(Resources.error(data = null, message = exception.message ?: "Error Occurred!"))

@@ -7,6 +7,7 @@ import retrofit2.http.Query
 
 interface ApiInterface {
     @GET(users)
-    suspend  fun getusersfromApi():Result
+    suspend fun getpageitems(@Query("page") pageNumber: Int,
+                             @Query("per_page") limit: Int = 6): Result
 
 }

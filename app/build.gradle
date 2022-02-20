@@ -75,6 +75,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-common:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
-
+    //jetpack paging
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha06"
+    // alternatively - without Android dependencies for tests
+    testImplementation "androidx.paging:paging-common:3.0.0-alpha06"
 
 }
